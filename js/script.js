@@ -61,3 +61,35 @@ function listElement(list){
 }
 
 listElement();
+
+
+//Question 8:
+function createCats(cats) {
+    
+    let newHTML = "";
+
+    for (let i = 0; i < cats.length; i++) {
+    let catName = cats[i].name;
+    let catAge = cats[i].age;
+    
+        if (!catAge) {
+            catAgeUnknown = "Age unknown";
+            newHTML += `<div>
+                       <h5> ${catName}</h5>
+                        <p>${catAgeUnknown}</p>
+                    </div>`;
+        } else {
+
+        newHTML += `<div>
+                       <h5> ${catName}</h5>
+                        <p>${catAge}</p>
+                    </div>`;
+}
+    }
+    return newHTML;
+}
+
+const newHTML = createCats(cats);
+
+const catContainer = document.querySelector(".cat-container");
+catContainer.innerHTML = newHTML;
